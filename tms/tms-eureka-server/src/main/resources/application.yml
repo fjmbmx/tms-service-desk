@@ -1,0 +1,89 @@
+server:
+  port: 8761
+  
+spring:
+  application:
+    name : eureka-server
+    
+  banner:
+    location: classpath:telemetry-banner.txt
+
+##PROMETHEUS.
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: health,info,prometheus,metrics
+      ##path-mapping:
+        ##prometheus: metrics
+  endpoint:
+    health:
+      show-details: ALWAYS
+    prometheus:
+      cache:
+        time-to-live: 1ms
+        
+##eureka:
+##  client:
+##    registerWithEureka: false
+##    fetchRegistry: false
+## http://localhost:8761/
+##EUREKA CLUSTER
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    registry-fetch-interval-seconds: 30
+  instance:
+    appname: eureka-server
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
+
+  server: 
+    enable-self-preservation: false
+    peer-node-read-timeout-ms: 30000
+    expected-client-renewal-interval-seconds: 3
+    eviction-interval-timer-in-ms: 2000
+    
+    ##expected-client-renewal-interval-seconds: 60
+    ##eviction-interval-timer-in-ms: 6000
+    ##peer-node-connect-timeout-ms: 60000
+    ##peer-node-read-timeout-ms: 120000
+    ##expected-client-renewal-interval-seconds: 60
+
+log:
+  app-name: discovery-service
+  
+---
+server:
+  port: 8761
+spring:
+  config:
+    activate:
+      on-profile: peer1
+eureka:
+  instance:
+    hostname: discovery-service-1
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-service-2:8762/eureka/
+log:
+  app-name: discovery-service-1
+
+---
+server:
+  port: 8762
+spring:
+  config:
+    activate:
+      on-profile: peer2
+eureka:
+  instance:
+    hostname: discovery-service-2
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-service-1:8761/eureka/
+      
+log:
+  app-name: discovery-service-2

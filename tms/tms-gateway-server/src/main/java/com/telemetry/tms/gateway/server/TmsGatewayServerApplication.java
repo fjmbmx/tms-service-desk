@@ -1,0 +1,13 @@
+package com.telemetry.tms.gateway.server;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class TmsGatewayServerApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(TmsGatewayServerApplication.class, args);
+	}
+
+}
