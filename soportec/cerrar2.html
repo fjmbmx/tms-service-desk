@@ -1,0 +1,139 @@
+<html>
+
+<head  >
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+</head>
+
+<center>
+
+
+<img src="crs2.jpg" width="500" height="130"></br>
+
+	<font size="5" color="#335BA3" > Cierre de Reporte </font>
+
+
+<form name="frmContacto" method="post" action="close.php">
+
+
+</br>
+
+<table width="500px"   style="font-size:17px" cellspacing="2"   bgcolor="#E4F4FD" >
+
+
+																	  
+<tr>
+<td align="center" >
+	
+  </br></br>
+</td>
+
+
+</tr>
+
+<tr>
+<td align="right"  valign="top">
+<label for="foli_o"> *Folio </label>
+</td>
+<td  bgcolor="#E4F4FD" >
+<input type="text" name="foli_o" maxlength="50" size="35" placeholder="Tres dígitos del CRO" 
+	   required  >
+</br>
+</br>
+</td>
+</tr>
+
+																	 
+<tr>
+<td align="right"  valign="top">
+<label for="registr_i"> *Registro Interno </label>
+</td>
+<td  bgcolor="#E4F4FD" >
+<input type="text" name="registr_i" maxlength="50" size="35" placeholder="Folio de Hoja de Servicio"   required  >
+</br>
+</br>
+</td>
+</tr>
+	
+<tr>
+<td valign="top" align="right" >
+<label for="sumadow_n"> *&#931;Down </label>
+</td>
+<td bgcolor="#E4F4FD" >
+<input type="text" name="sumadow_n" maxlength="50" size="35" placeholder="Suma de DownTime" required>
+</br>
+</br>
+</td>
+</tr>
+		
+
+																 
+<tr>
+<td valign="top" align="right" >
+<label for="registr_o">*Registro Externo</label>
+</td>
+<td bgcolor="#E4F4FD" >
+<input type="text" name="registr_o" maxlength="50" size="35" placeholder="WO ó DSO"  required>
+</br>
+</br>
+</td>
+</tr>
+				 										  
+<tr>
+<td align="right"  valign="top">
+<label for="actividade_s">*Actividades: </label>
+</td>
+<td bgcolor="#E4F4FD"  >
+<textarea name="actividade_s" maxlength="240" cols="34" rows="7" required></textarea>
+</br></br>
+</td>
+</tr>
+														  
+
+<tr> 
+<td colspan="2" style="text-align:center" bgcolor="#D8DFEA"> 
+	<font FACE="monospace" size="5" color="#A3ADB6" > Tecnovigilancia </br> </font>
+	
+<select name="rtecn_o" required>  
+    <option value="">-*seleccione-</option> 
+	<option value="No requiere">NO REQUIERE SEGUIMIENTO</option>   
+    <option value="Requiere seguimiento">REQUIERE SEGUIMIENTO</option>   
+	<option value="Critico">CRITICO</option>
+</select>	
+</td>
+</tr>
+
+
+<tr>
+<td align="center" bgcolor="#D8DFEA">
+	<font FACE="arial" color="#8F9CA9" > SR </font>	
+	
+<input type="text" name="s_r" maxlength="12" size="12" placeholder="Solo daVinci" >
+</td>
+	
+<td align="center"  bgcolor="#D8DFEA" > 
+	<font FACE="arial"  color="#8F9CA9" > *Fecha del evento </font>
+<input type="date" name="fevent_o" maxlength="12" size="12" required>
+
+</td>
+
+</tr>
+
+<tr>
+<td align="right" bgcolor="#E4F4FD"  > 
+
+</td>
+
+<td  style="text-align: left"></br>
+	Contraseña <input type="password" name="contr_a" maxlength="12" size="12" required>
+	<input type="submit" value="Enviar">
+</td>
+</tr>
+</table>
+</form>
+
+
+</center>
+
+</html>

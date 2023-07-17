@@ -1,0 +1,289 @@
+ 
+  <!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Atención a clientes CRS</title>
+      <!--CSS-->
+      <style>
+        /*Los apartados de html y body hacen que manejar los tamaños rem sean facil--> 1rem=10px*/
+        html{
+          font-size: 62.5%; 
+          box-sizing: border-box;
+          scroll-snap-type: y mandatory;
+        }
+        *, *:before, *:after{
+          box-sizing: inherit;
+        }
+        header{
+          text-align: center;
+        }
+        .img-texto{
+          width: 70%;
+          height: 40%;
+        }
+        .guy{
+          width: 20rem;;
+          height: 21rem;
+        }
+      
+              .tabla {
+                  border-radius:20px 20px 20px 20px;
+                  width: 95%;
+                  padding: ;
+                  background: rgba(216,225,231,1);
+                  background: -moz-linear-gradient(left, rgba(216,225,231,1) 0%, rgba(242,246,248,1) 0%, rgba(143,170,220,1) 99%, rgba(224,239,249,1) 100%);
+                  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(216,225,231,1)), color-stop(0%, rgba(242,246,248,1)), color-stop(99%, rgba(143,170,220,1)), color-stop(100%, rgba(224,239,249,1)));
+                  background: -webkit-linear-gradient(left, rgba(216,225,231,1) 0%, rgba(242,246,248,1) 0%, rgba(143,170,220,1) 99%, rgba(224,239,249,1) 100%);
+                  background: -o-linear-gradient(left, rgba(216,225,231,1) 0%, rgba(242,246,248,1) 0%, rgba(143,170,220,1) 99%, rgba(224,239,249,1) 100%);
+                  background: -ms-linear-gradient(left, rgba(216,225,231,1) 0%, rgba(242,246,248,1) 0%, rgba(143,170,220,1) 99%, rgba(224,239,249,1) 100%);
+                  background: linear-gradient(to right, rgba(216,225,231,1) 0%, rgba(242,246,248,1) 0%, rgba(143,170,220,1) 99%, rgba(224,239,249,1) 100%);
+                  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4DF04A', endColorstr='#4DF04A', GradientType=1 );
+              }
+        .texto{
+          font-size: 3.25rem;
+          font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+        }
+        .seleccion{
+          width: 100%;
+          padding: 0.1rem;
+          font-size: 3rem;
+          border-radius: 0.75rem;
+          cursor: pointer;
+          text-align-last: center;
+          border: 0.2rem solid rgba(113,206,239,0);
+        }
+        .seleccion:focus, .seleccion:hover, .entrada:focus, .area-texto:focus, .entrada:hover, .area-texto:hover{
+          outline: none;
+          background-color: lightblue; 
+          border: 0.2rem solid dodgerblue;
+        }
+        .seleccion option{
+          background-color: aliceblue;
+        }
+        .entrada{
+          width: 100%;
+          padding: 0.1rem;
+          border: none;
+          border-radius: 0.5rem;
+          font-size: 3rem;
+          border: 0.2rem solid rgba(113,206,239,0);
+        }
+        .td-texto{
+          text-align: right;
+          vertical-align: top;
+          width: 40%;
+        }
+        .area-texto{
+          width: 100%;
+          padding: 0.1rem;
+          border-radius: 1rem;
+          font-size: 3rem; 
+          border: 0.2rem solid rgba(113,206,239,0);
+        }
+        .btnEnviar{
+          cursor: pointer;
+          border-radius: 0.5rem;
+          font-size: 4rem;
+          padding: 0.5rem;
+          width: 95%;
+          border: none;
+          background-color: #002A7E;
+          color: white;
+          font-weight: bold;
+        }
+        .btnEnviar:hover{
+          -webkit-transform:scale(1.05);
+        }
+        .pie{
+          text-align: center;
+          font-size: 1.5rem;
+          padding: 2rem;
+          color: #1E747B;
+        }	 
+        .td-boton{
+          text-align: center;
+        }
+        
+        /*RESPONSIVE WEB DESIGN: Cuando la pantalla mida más de 1100px*/
+        @media(min-width:1100px){
+          .img-texto{
+            width: 31rem;
+            height: 13rem;
+          }
+          .guy{
+            width: 9rem;
+            height: 9rem;
+          }
+          .tabla{
+  /*				padding: 2rem 1.5rem 1.5rem 1.5rem;*/
+          width: 30%;
+  /*				width: 450px;*/
+            
+          }
+          .log{
+  
+            width: 100%;
+            /*width: 480px;
+            height: 120px;*/
+            border-top-left-radius: 20px 20px;
+            border-top-right-radius: 20px 20px;
+  /*				padding: 2rem 1.5rem 1.5rem 1.5rem;*/
+          
+          position: relative;
+          }
+          .texto{
+            font-size: 1.5rem;
+          }
+          .td-texto{
+            width: 35%;
+          }
+          .seleccion{
+            font-size: 1.25rem;
+          }
+          .entrada{
+            font-size: 1.35rem;	
+          }
+          .btnEnviar{
+            font-size: 1.5rem;
+            width: 20%;
+          }
+          .area-texto{
+            font-size: 1.75rem;
+          }
+          .td-boton{
+            text-align:right;
+          }
+          .pie{
+            font-size: 1.25rem;
+            padding: 0.5rem;
+            width: 99.99%;
+          }
+          p{
+            padding-left: 35%;
+            padding-right: 35%;
+          }
+          header{
+            vertical-align: top;
+          }
+        }
+      </style>
+    </head>
+  
+    <body>
+      <center>
+        <form name="frmContacto" method="post" action="openo.php">
+          
+          <table class="tabla" cellspacing="2">
+            <tbody><tr style="text-align: center;">
+              
+              <!-- <h1  style="position: absolute;top: 10px; left: 10px;">CENTRO DE REPORTE DE FALLAS</h1> -->
+              <td colspan="3">
+                <img class="log" src="imagenes/log.png"> 
+                <!-- <img  src="imagenes/log.png" style="width: 500px; position: relative;" > -->
+                <!-- <h1  >CENTRO DE REPORTE DE FALLAS</h1> -->
+  
+                <h1 style="position: relative;top: 10px; left: 10px; color:#000080 ;">CENTRO DE REPORTE DE FALLAS:<br> FOR-ST-002</h1>
+                <br><br>
+  
+              </td>
+            </tr>
+            <tr>
+              <td class="td-texto">
+                <label class="texto" for="destin_o">Tipo de solicitud:</label>
+              </td>
+              <td>
+                <select class="seleccion" name="destin_o" required=""> 
+                    <option value="">-Seleccione uno-</option> 
+                    <option value="ingenieria">REPORTE DE FALLA EN EQUIPO</option> 
+                    <option value="dmiles">REPORTE DE PRODUCTO</option>
+                    <option value="ingenieria">PREVENTIVO</option> 
+                </select> 
+                <br>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td align="right" valign="top">
+                <label class="texto" for="clien_t">Cliente:</label>
+              </td>
+              <td>
+                <input type="text" class="entrada" name="clien_t" required="">
+                <br>												 
+                <br>									  
+              </td>
+            </tr>												  
+            <tr>
+              <td valign="top" align="right">
+                <label class="texto" for="equip_o">Producto/Equipo:</label>
+              </td>
+              <td>
+                <input type="text" class="entrada" name="equip_o" placeholder=" E.g. Pinza, Endoscopio, Tomógrafo" required="">
+                <br>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top" align="right">
+                <label class="texto" for="seri_e"> No. de Serie/Lote:</label>
+              </td>
+              <td>
+                <input type="text" class="entrada" name="seri_e" required="">
+                <br>
+                <br>	
+              </td>
+            </tr>															
+            <tr>
+              <td align="right" valign="top">
+                <label class="texto" for="nombr_e">Contacto:</label>
+              </td>
+              <td>
+                <input class="entrada" type="text" name="nombr_e" placeholder=" Persona que reporta el problema" required="">
+                <br>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td align="right" valign="top">
+                <label class="texto" for="email">E-mail:</label>
+              </td>
+              <td>
+                <input type="text" class="entrada" name="email" placeholder=" Recibirá un correo de confirmación" required="">
+                <br>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td align="right" valign="top">
+                <label class="texto" for="telephone">Teléfono:</label>
+              </td>
+              <td>
+                <input type="text" class="entrada" name="telephone" required="">
+                <br>
+                <br>
+              </td>
+            </tr>										
+            <tr>
+              <td align="right" valign="top" style="padding-right: 0.5rem;">
+                <label class="texto" for="comments">Descripción de la solicitud, falla del equipo o problema a reportar: </label>
+              </td>
+              <td>
+                <textarea class="area-texto" name="comments" maxlength="240" cols="34" rows="7" required=""></textarea>
+              </td>
+            </tr>										
+            <tr>
+              <td class="td-boton" colspan="2">
+                 <input type="hidden" name="contr_a" value="100">
+                <input class="btnEnviar" type="submit" value="Enviar">
+              </td>
+            </tr>
+          </tbody></table>
+        </form>
+      </center>
+      <footer class="pie">
+        <p>Todos los campos son obligatorios, para atención personalizada contactenos de lunes a viernes de 9:00 a.m. a 6:00 p.m., a los teléfonos: (55) 5584-1030 Ext: 108 y 115, 01800-277-2255 Ext: 108 y 115 y móvil: 5519634723 .</p>
+        <p style="font-style: italic;">Cyber Robotic Solutions S.A. de C.V.</p>
+    </footer>
+    
+  
+  
+  </body></html>
+   

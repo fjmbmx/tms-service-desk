@@ -1,0 +1,348 @@
+	
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Encuesta de satisfacción CRS</title>
+	
+	<!--CSS-->
+	<style>
+		/*Los apartados de html y body hacen que manejar los tamaños rem sean facil--> 1rem=10px*/
+		html{
+			font-size: 62.5%; 
+			box-sizing: border-box;
+			scroll-snap-type: y mandatory;
+		}
+		*, *:before, *:after{
+			box-sizing: inherit;
+		}
+		
+		/*FORMULARIO*/
+		body{
+			height: auto;
+		}
+		.tabla{
+			width: auto;
+			background-color: #FFFFFF;
+			border-radius: 1rem;
+			padding: 4rem;
+			-webkit-box-shadow: 9px 5px 84px 39px rgba(186,227,250,1);
+			-moz-box-shadow: 9px 5px 84px 39px rgba(186,227,250,1);
+			box-shadow: 9px 5px 84px 39px rgba(186,227,250,1);
+		}
+		.espacio{
+			align-content: center;
+			background-color: #BAE3FA;
+		}
+		.preguntas{
+			font-size: 4rem;
+			line-height: 1,5; /*Interlineado*/
+			color: #00008B;
+			text-align: center;
+			font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		}
+		.imagen{
+			/*width: 90%;
+			height: 90%;*/
+			width: 60rem;
+			height:20rem;
+		}
+		.cro{
+			width: 13rem;
+			border-radius: 0.5rem;
+		}
+		.lbfolio{
+			font-size: 4rem;
+			color: orange;
+		}
+		.areaTexto{
+			border-radius: 1rem;
+			font-size: 3.5rem;
+		}
+		.btnEnviar{
+			cursor: pointer;
+			border-radius: 0.5rem;
+			font-size: 4rem;
+			padding: 0.5rem;
+			width: 40%;
+			background-color: lightblue;
+		}
+		.btnEnviar:hover{
+			background-color: orange;
+			color: white;
+			font-weight: bold;
+		}
+		a{
+			font-size: 4.25rem;
+		}
+		input{
+				font-size: 4rem;
+			}
+		.pie{
+			text-align: center;
+			font-size: 1.5rem;
+			padding-bottom: 0.5rem;
+			margin-top: 4rem;
+		} 
+		
+		/*ESTRELLAS*/
+		input[type="radio"]{
+	  		display: none;
+		}
+		label {
+  			color: gray;
+			font-size: 6rem;
+		}
+		.calificacion{
+  			direction: rtl;
+  			unicode-bidi: bidi-override;
+		}
+		label:hover, label:hover ~ label{
+  			color: orange;
+			cursor: pointer;
+		}
+		input[type="radio"]:checked ~ label{
+			color: orange;
+		}
+		
+		/*SELECCIÓN DE RESPUESTA*/
+		.seleccion{
+			display: inline-block;
+			padding: 0.5rem;
+			font-size: 3.75rem;
+			border-radius: 1rem;
+			cursor: pointer;
+			text-align-last: center;
+		}
+		.seleccion:focus, .seleccion:hover{
+			outline: none;
+			background-color: lightblue;
+			border: 0.2rem solid dodgerblue; 
+		}
+		.seleccion option{
+			background-color: aliceblue;
+		}
+		
+		/*RESPONSIVE WEB DESIGN: Cuando la pantalla mida más de 1100px*/
+		@media(min-width:1100px){ 	
+			.tabla{
+				width: 95rem;
+			}
+			.imagen{
+			width: 60rem;
+			height: 20rem;
+			}
+			.preguntas, .lbfolio, .areaTexto{
+				font-size: 2rem;
+			}
+			input, .seleccion{
+				font-size: 1.25rem;
+			}
+			a, .btnEnviar{
+				font-size: 1.5rem;
+			}
+			.cro{
+				width: 5rem;
+			}
+			label {
+			font-size: 3rem;
+			}
+		}
+	</style>	
+</head>
+
+<body>
+	<center>
+		<!--FORMULARIO-->
+		<form name="frmContacto" method="post" action="encuesta.php"> 
+			<table class="tabla" cellspacing="2"><!--Tabla-->
+				<tr> <!--Fila-->
+					<td align="center"> <!--Celda-->
+						<font class="preguntas"> 
+							<img class="imagen" src="calidad.png" alt="Imagen"> <img src="encuesta2.gif" width="225" height="170">
+							<br></br>
+						</font>	
+						</br></br>
+					</td>
+ 				</tr>
+	
+ 				<tr>
+					<td align="center">
+						<label class="lbfolio" for="folio"> Número de folio:  </label>
+						<a>CRO-</a>
+						<input class="cro" type="text" name="folio" autofocus required>
+						</br></br>
+						</br></br>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="espacio"></td>
+ 				</tr>
+				
+				<!--PREGUNTA 1:-->
+				<tr>
+					<td align="center" >	
+					<font class="preguntas"> 1. ¿Después de la visita de servicio técnico su equipo funciona de manera correcta? </font>		
+					</td>
+ 				</tr>
+ 				<tr>
+ 					<td align="center">	
+						</br></br>
+						<select class="seleccion" name="p_1"> 
+    						<option value="">-Respuesta 1-</option> 
+    						<option value="Si">Si</option> 
+    						<option value="No">No</option> 
+    						<option value="Fallo Intermitente">Presenta fallo intermitente</option> 
+						</select> 
+						</br></br>
+						</br></br>
+					</td>
+				</tr>
+			
+				<tr>
+					<td class="espacio"></td>
+ 				</tr>
+			
+			<!--PREGUNTA 2:-->
+			<tr>
+				<td align="center" >	
+				<font class="preguntas"> 2. ¿El ingeniero organizó su visita, acceso, así como el ingreso de herramientas y partes siguiendo los procedimientos establecidos por ustedes?</font>		
+				</td>
+ 			</tr>
+ 			<tr>
+ 				<td align="center">
+					</br></br>
+					<select class="seleccion" name="p_2"> 
+    					<option value="">-Respuesta 2-</option> 
+    					<option value="Si">Si</option> 
+    					<option value="No">No</option> 
+    					<option value="Falta comunicación">Faltó Comunicación</option> 
+					</select> 
+					</br></br>
+					</br></br>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="espacio"></td>
+ 			</tr>
+			
+			<!--PREGUNTA 3-->
+			<tr>
+				<td align="center" >	
+				<font class="preguntas"> 3. ¿El ingeniero le comunicó oportunamente los hallazgos, posible causa, estatus de refacciones y resolución del problema?</font>		
+				</td>
+ 			</tr>
+ 			<tr>
+ 				<td align="center">
+				</br></br>
+				<select class="seleccion" name="p_3"> 
+    				<option value="">-Respuesta 3-</option> 
+    				<option value="Si">Si</option> 
+    				<option value="No">No</option> 
+    				<option value="Falta comunicación">Faltó comunicación</option> 
+				</select> 
+				<br></br>
+				<br></br>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="espacio"></td>
+ 			</tr>
+			
+			<!--PREGUNTA 4:-->
+			<tr>
+				<td align="center" >	
+				<font class="preguntas" > 4. ¿Cómo calificaría el tiempo de respuesta para la atención y solución de esta falla?</font>			
+				</td>
+ 			</tr>
+ 			<tr>
+ 				<td align="center">
+					<!--ESTRELLAS-->
+					<p class="calificacion">
+    				<input id="star1" type="radio" name="p_4" value="5 estrellas">
+    				<label for="star1">★</label>
+    				<input id="star2" type="radio" name="p_4" value="4 estrellas">
+    				<label for="star2">★</label>
+    				<input id="star3" type="radio" name="p_4" value="3 estrellas">
+    				<label for="star3">★</label>
+    				<input id="star4" type="radio" name="p_4" value="2 estrellas">
+    				<label for="star4">★</label>
+    				<input id="star5" type="radio" name="p_4" value="1 estrella">
+    				<label for="star5">★</label>
+				</p>
+				</br></br>
+				</br></br>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="espacio"></td>
+ 			</tr>
+			
+			<!--PREGUNTA 5:-->
+			<tr>
+				<td align="center" >	
+				<font class="preguntas"> 5. ¿Cómo calificaría el servicio en general?</font>		
+				</td>
+ 			</tr>
+ 			<tr>
+ 				<td align="center">	
+				<!--ESTRELLAS-->
+				<p class="calificacion">
+    				<input id="estrella1" type="radio" name="p_5" value="5 estrellas">
+    				<label for="estrella1">★</label>
+    				<input id="estrella2" type="radio" name="p_5" value="4 estrellas">
+    				<label for="estrella2">★</label>
+    				<input id="estrella3" type="radio" name="p_5" value="3 estrellas">
+    				<label for="estrella3">★</label>
+    				<input id="estrella4" type="radio" name="p_5" value="2 estrellas">
+    				<label for="estrella4">★</label>
+    				<input id="estrella5" type="radio" name="p_5" value="1 estrella">
+    				<label for="estrella5">★</label>
+				</p>
+				</br></br>
+				</br></br>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="espacio"></td>
+ 			</tr>
+			
+			<!--PREGUNTA 6:-->
+			<tr>
+				<td align="center" >	 
+				<font class="preguntas">6. ¿Tiene algún comentario, queja o sugerencia?</font>
+				</br></br>
+				</td>
+ 			</tr>
+ 			<tr>
+ 				<td align="center">
+	 			<textarea class="areaTexto" name="coment" maxlength="240" cols="34" rows="7" required></textarea>
+				</br></br>
+				</td>
+
+				<tr>
+					<td align = "center">
+						<input class="btnEnviar" type="submit" value="Enviar">
+						</br></br>
+					</td>
+				</tr>
+
+			</tr>
+			</table>
+		</form>
+	</center>
+
+	<footer class="pie">
+		<p>Gracias por responder esta encuesta, su opinión es muy importante para nosotros.</p>
+		<P style="font-style: italic">Cyber Robotic Solutions S.A. de C.V.</P>
+	</footer>
+
+</body>
+</html>
+
+
